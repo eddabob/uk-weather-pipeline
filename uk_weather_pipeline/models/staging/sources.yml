@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: uk_weather_raw
+    schema: uk_weather
+    tables:
+      - name: processed_data
+        description: "Raw hourly UK weather observations ingested into MySQL."
