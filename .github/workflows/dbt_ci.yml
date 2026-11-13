@@ -33,13 +33,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install MySQL ODBC Driver and Client
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y unixodbc unixodbc-dev mysql-client wget
-          wget -q https://mysql.com
-          sudo dpkg -i mysql-connector-odbc_8.0.33-1ubuntu22.04_amd64.deb || sudo apt-get install -f -y
-
       - name: Install dbt-mysql
         run: |
           pip install --upgrade pip
@@ -47,7 +40,11 @@ jobs:
 
       - name: Seed sample processed_data table in MySQL
         run: |
-          mysql -h 127.0.0.1 -P 3306 -u root -pci_test_password uk_weather -e "
+          python -c "
+          import mysql.connector
+          conn = mysql.connector.connect(host='127.0.0.1', port=3306, user='root', password='ci_test_password', database='uk_weather')
+          cur = conn.cursor()
+          cur.execute('''
             CREATE TABLE processed_data (
               date DATE,
               station_name VARCHAR(100),
@@ -60,10 +57,16 @@ jobs:
               is_freezing TINYINT,
               feels_like_c DECIMAL(5,2),
               pressure_trend VARCHAR(50)
-            );
+            )
+          ''')
+          cur.execute('''
             INSERT INTO processed_data VALUES
               ('2026-11-12', 'Heathrow', 11.50, 78.00, 12.40, 1015.20, 'Partly Cloudy', 14, 0, 10.20, 'Steady'),
-              ('2026-11-12', 'Edinburgh', 4.20, 85.00, 18.00, 1008.50, 'Light Rain', 14, 0, 0.80, 'Falling');
+              ('2026-11-12', 'Edinburgh', 4.20, 85.00, 18.00, 1008.50, 'Light Rain', 14, 0, 0.80, 'Falling')
+          ''')
+          conn.commit()
+          cur.close()
+          conn.close()
           "
 
       - name: Run dbt debug, run, and test
