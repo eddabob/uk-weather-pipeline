@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_weather_observations
+    description: "Cleaned hourly weather observations per station."
+    columns:
+      - name: observation_date
+        tests:
+          - not_null
+      - name: station_name
+        tests:
+          - not_null
+      - name: temperature_c
+        tests:
+          - not_null
+
+  - name: fct_daily_weather_summary
+    description: "Daily aggregated weather metrics by station."
+    columns:
+      - name: observation_date
+        tests:
+          - not_null
+      - name: station_name
+        tests:
+          - not_null
+      - name: total_observations
+        tests:
+          - not_null
