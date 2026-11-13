@@ -1,0 +1,12 @@
+uk_weather_pipeline:
+  target: ci
+  outputs:
+    ci:
+      type: mysql
+      server: 127.0.0.1
+      port: 3306
+      database: uk_weather
+      schema: uk_weather
+      username: root
+      password: "{{ env_var('MYSQL_ROOT_PASSWORD') }}"
+      driver: MySQL ODBC 8.0 ANSI Driver

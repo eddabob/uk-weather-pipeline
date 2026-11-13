@@ -1,0 +1,80 @@
+name: dbt CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  dbt-build-and-test:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: ci_test_password
+          MYSQL_DATABASE: uk_weather
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -u root -pci_test_password"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dbt-mysql
+        run: |
+          pip install --upgrade pip
+          pip install dbt-mysql
+
+      - name: Seed sample processed_data table in MySQL
+        run: |
+          python -c "
+          import mysql.connector
+          conn = mysql.connector.connect(host='127.0.0.1', port=3306, user='root', password='ci_test_password', database='uk_weather')
+          cur = conn.cursor()
+          cur.execute('''
+            CREATE TABLE processed_data (
+              date DATE,
+              station_name VARCHAR(100),
+              temp_c DECIMAL(5,2),
+              humidity_pct DECIMAL(5,2),
+              wind_speed_mph DECIMAL(6,2),
+              pressure_mb DECIMAL(7,2),
+              condition_text VARCHAR(100),
+              hour_of_day INT,
+              is_freezing TINYINT,
+              feels_like_c DECIMAL(5,2),
+              pressure_trend VARCHAR(50)
+            )
+          ''')
+          cur.execute('''
+            INSERT INTO processed_data VALUES
+              ('2026-11-12', 'Heathrow', 11.50, 78.00, 12.40, 1015.20, 'Partly Cloudy', 14, 0, 10.20, 'Steady'),
+              ('2026-11-12', 'Edinburgh', 4.20, 85.00, 18.00, 1008.50, 'Light Rain', 14, 0, 0.80, 'Falling')
+          ''')
+          conn.commit()
+          cur.close()
+          conn.close()
+          "
+
+      - name: Run dbt debug, run, and test
+        working-directory: uk_weather_pipeline
+        env:
+          DBT_PROFILES_DIR: ./ci_profiles
+          MYSQL_ROOT_PASSWORD: ci_test_password
+        run: |
+          dbt debug
+          dbt run
+          dbt test
