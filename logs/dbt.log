@@ -1,0 +1,92 @@
+[0m10:30:55.210045 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10564bcb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x130ce3890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x130ce3750>]}
+
+
+============================== 10:30:55.212170 | 3875ff69-6e1d-4c29-8c81-0b389cfb329f ==============================
+[0m10:30:55.212170 [info ] [MainThread]: Running with dbt=1.7.20
+[0m10:30:55.212398 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': '/Users/yliu/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt init', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:30:55.212597 [warn ] [MainThread]: [[33mWARNING[0m]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. Please upgrade to a newer supported version of dbt for new projects: https://docs.getdbt.com/docs/dbt-versions?utm_source=dbt-cli
+[0m10:30:55.212724 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': '3875ff69-6e1d-4c29-8c81-0b389cfb329f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1308c6ea0>]}
+[0m10:30:55.212909 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/Users/yliu/.dbt')}
+[0m10:30:55.213009 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m10:31:40.033014 [debug] [MainThread]: Starter project path: /opt/anaconda3/lib/python3.13/site-packages/dbt/include/starter_project
+[0m10:31:40.045040 [info ] [MainThread]: 
+Your new dbt project "uk_weather_pipeline" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m10:31:40.045751 [info ] [MainThread]: Setting up your profile.
+[0m10:32:28.336354 [info ] [MainThread]: Profile uk_weather_pipeline written to /Users/yliu/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m10:32:28.338362 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 93.15993, "process_user_time": 0.760929, "process_kernel_time": 0.156975, "process_mem_max_rss": "115802112", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m10:32:28.338601 [debug] [MainThread]: Command `dbt init` succeeded at 10:32:28.338526 after 93.16 seconds
+[0m10:32:28.338756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13143dd00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13143de10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1308c3250>]}
+[0m10:32:28.338905 [debug] [MainThread]: Flushing usage events
+[0m10:48:14.616250 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1052c3cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a1f890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a1f750>]}
+
+
+============================== 10:48:14.618355 | f5676e8a-d7ec-4f7f-8ade-f95a00931879 ==============================
+[0m10:48:14.618355 [info ] [MainThread]: Running with dbt=1.7.20
+[0m10:48:14.618607 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/yliu/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:48:14.618772 [info ] [MainThread]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. We recommend upgrading to a newer supported version of dbt: https://docs.getdbt.com/docs/dbt-versions
+[0m10:48:14.618894 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': 'f5676e8a-d7ec-4f7f-8ade-f95a00931879', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1078c6780>]}
+[0m10:48:14.619130 [info ] [MainThread]: dbt version: 1.7.20
+[0m10:48:14.619237 [info ] [MainThread]: python version: 3.13.9
+[0m10:48:14.619331 [info ] [MainThread]: python path: /opt/anaconda3/bin/python3.13
+[0m10:48:14.619424 [info ] [MainThread]: os info: macOS-15.6-arm64-arm-64bit-Mach-O
+[0m10:48:14.687276 [info ] [MainThread]: Using profiles dir at /Users/yliu/.dbt
+[0m10:48:14.687473 [info ] [MainThread]: Using profiles.yml file at /Users/yliu/.dbt/profiles.yml
+[0m10:48:14.687590 [info ] [MainThread]: Using dbt_project.yml file at /Users/yliu/Desktop/learning/uk-weather-pipeline/dbt_project.yml
+[0m10:48:14.687787 [info ] [MainThread]: adapter type: mysql
+[0m10:48:14.687893 [info ] [MainThread]: adapter version: 1.7.0
+[0m10:48:14.687998 [info ] [MainThread]: Configuration:
+[0m10:48:14.688093 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:48:14.688180 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m10:48:14.688270 [info ] [MainThread]: Required dependencies:
+[0m10:48:14.688395 [debug] [MainThread]: Executing "git --help"
+[0m10:48:14.699457 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:48:14.699796 [debug] [MainThread]: STDERR: "b''"
+[0m10:48:14.699940 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:48:14.700063 [info ] [MainThread]: Connection:
+[0m10:48:14.700182 [info ] [MainThread]:   server: localhost
+[0m10:48:14.700279 [info ] [MainThread]:   unix_socket: None
+[0m10:48:14.700366 [info ] [MainThread]:   port: 3306
+[0m10:48:14.700455 [info ] [MainThread]:   database: None
+[0m10:48:14.700541 [info ] [MainThread]:   schema: uk_weather
+[0m10:48:14.700712 [info ] [MainThread]:   user: root
+[0m10:48:14.700929 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m10:48:14.704415 [debug] [MainThread]: Acquiring new mysql connection 'debug'
+[0m10:48:14.704763 [debug] [MainThread]: Using mysql connection "debug"
+[0m10:48:14.704858 [debug] [MainThread]: On debug: select 1 as id
+[0m10:48:14.704971 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:48:14.729046 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m10:48:14.729646 [debug] [MainThread]: On debug: Close
+[0m10:48:14.729847 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m10:48:14.730008 [info ] [MainThread]: [31m1 check failed:[0m
+[0m10:48:14.730112 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/yliu/Desktop/learning/uk-weather-pipeline/dbt_project.yml> not found
+
+[0m10:48:14.731472 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.14404534, "process_user_time": 0.772636, "process_kernel_time": 0.154541, "process_mem_max_rss": "129810432", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m10:48:14.731666 [debug] [MainThread]: Command `dbt debug` failed at 10:48:14.731616 after 0.14 seconds
+[0m10:48:14.731796 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m10:48:14.731921 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1103986b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1103987c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ec7a50>]}
+[0m10:48:14.732064 [debug] [MainThread]: Flushing usage events
+[0m10:49:43.017378 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10686fcb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1110e3890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1110e3750>]}
+
+
+============================== 10:49:43.019480 | 37295e53-28af-4e32-b7bb-a95b272aba53 ==============================
+[0m10:49:43.019480 [info ] [MainThread]: Running with dbt=1.7.20
+[0m10:49:43.019717 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/yliu/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt init', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:49:43.019920 [warn ] [MainThread]: [[33mWARNING[0m]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. Please upgrade to a newer supported version of dbt for new projects: https://docs.getdbt.com/docs/dbt-versions?utm_source=dbt-cli
+[0m10:49:43.020044 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': '37295e53-28af-4e32-b7bb-a95b272aba53', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110dc6ea0>]}
